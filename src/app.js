@@ -1,9 +1,8 @@
 import express from 'express';
 import db from "./config/dbConnect.js";
-import livros from "./model/livro.js";
 import routes from "./routes/index.js";
 
-
+// abrindo conexão ao banco de dados
 db.on("error", console.log.bind(console, "Erro de Conexão"));
 db.once("open", ()=>{
     console.log("Conexão com o banco feita com sucesso!")
@@ -15,6 +14,8 @@ const app = express();
 app.use(express.json());
 
 routes(app);
+
+export default app;
 
 // const livros = [
 //     {"id": 1, 'titulo': 'Senhor dos Aneis'},
@@ -57,5 +58,3 @@ routes(app);
 // function buscalivro(id){
 //     return livros.findIndex(livro =>livro.id == id);
 // }
-
-export default app;

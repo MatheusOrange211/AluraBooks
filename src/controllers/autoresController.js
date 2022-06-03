@@ -24,7 +24,6 @@ class AutorController {
     // POST
     static CadastrarAutor = (req, res) => {
         let autor = new autores(req.body);
-
         autor.save((err) => {
             if (err) {
                 res.status(500).send({ menssage: `${err.menssage} - falha ao cadastrar autor` });

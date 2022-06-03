@@ -10,6 +10,7 @@ const router = express.Router();
 
 router
     .get("/livros", LivroController.listarLivros)
+    .get("/livros/busca", LivroController.listarLivrosByEditora)
     .get("/livros/:id",LivroController.listarLivrobyID)
     .post("/livros", LivroController.CadastrarLivro)
     .put("/livros/:id", LivroController.AtualizarLivro)
